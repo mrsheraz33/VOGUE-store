@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { HiPlus, HiPencil, HiTrash, HiSearch, HiLogout, HiStar } from 'react-icons/hi';
+import { HiPlus, HiPencil, HiTrash, HiSearch, HiLogout, HiStar, HiShoppingBag } from 'react-icons/hi';
 import ProductForm from './ProductForm';
 
 const AdminDashboard = ({ onLogout }) => {
@@ -10,15 +10,16 @@ const AdminDashboard = ({ onLogout }) => {
   const [editingProduct, setEditingProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
- const API_URL = 'https://vogue-backend-ibwc.onrender.com';
+  const API_URL = 'https://vogue-backend-ibwc.onrender.com';
 
   const fetchProducts = async () => {
     try {
       const response = await fetch(`${API_URL}/api/products`);
       const data = await response.json();
-      setProducts(data);
+      setProducts(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error('Failed to fetch products:', error);
+      setProducts([]);
     } finally {
       setLoading(false);
     }
@@ -74,107 +75,132 @@ const AdminDashboard = ({ onLogout }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="VOGUE" className="h-10 w-auto" />
-            <h1 className="text-xl font-black text-gray-900">Admin Panel</h1>
-          </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => {
-                setEditingProduct(null);
-                setShowForm(true);
-              }}
-              className="flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-all"
-            >
-              <HiPlus className="w-5 h-5" /> Add Product
-            </button>
-            <button
-              onClick={onLogout}
-              className="flex items-center gap-2 px-4 py-2.5 bg-gray-100 text-gray-700 font-bold rounded-xl hover:bg-gray-200 transition-all"
-            >
-              <HiLogout className="w-5 h-5" /> Logout
-            </button>
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+          <div className="flex items-center justify-between gap-3">
+            {/* Left - Title */}
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                <HiShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+              </div>
+              <div className="min-w-0">
+                <h1 className="text-base sm:text-xl font-black text-gray-900 truncate">Admin Panel</h1>
+                <p className="hidden sm:block text-xs text-gray-400 font-medium">{products.length} products</p>
+              </div>
+            </div>
+
+            {/* Right - Buttons */}
+            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+              <button
+                onClick={() => {
+                  setEditingProduct(null);
+                  setShowForm(true);
+                }}
+                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-gray-900 text-white text-xs sm:text-sm font-bold rounded-xl hover:bg-gray-800 transition-all shadow-lg active:scale-95"
+              >
+                <HiPlus className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="hidden sm:inline">Add Product</span>
+                <span className="sm:hidden">Add</span>
+              </button>
+              
+              <button
+                onClick={onLogout}
+                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-bold rounded-xl hover:bg-gray-200 transition-all active:scale-95"
+              >
+                <HiLogout className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="hidden sm:inline">Logout</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Search */}
-        <div className="relative max-w-md mb-8">
-          <HiSearch className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+        <div className="relative mb-6 sm:mb-8">
+          <HiSearch className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search products..."
-            className="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-gray-900 transition-all"
+            className="w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-white border border-gray-200 rounded-xl text-sm sm:text-base text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-900 focus:ring-2 focus:ring-gray-900/5 transition-all"
           />
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
           {[
-            { label: 'Total Products', value: products.length, bg: 'bg-gray-900' },
-            { label: 'Sneakers', value: products.filter(p => p.category === 'Sneakers').length, bg: 'bg-gray-700' },
-            { label: 'Casual', value: products.filter(p => p.category === 'Casual').length, bg: 'bg-gray-800' },
-            { label: 'Sports', value: products.filter(p => p.category === 'Sports').length, bg: 'bg-gray-600' },
+            { label: 'Total', value: products.length, bg: 'bg-gray-900', icon: HiShoppingBag },
+            { label: 'Sneakers', value: products.filter(p => p.category === 'Sneakers').length, bg: 'bg-gray-700', icon: HiStar },
+            { label: 'Casual', value: products.filter(p => p.category === 'Casual').length, bg: 'bg-gray-800', icon: HiStar },
+            { label: 'Sports', value: products.filter(p => p.category === 'Sports').length, bg: 'bg-gray-600', icon: HiStar },
           ].map(stat => (
-            <div key={stat.label} className={`${stat.bg} text-white rounded-2xl p-5`}>
-              <p className="text-white/70 text-sm mb-1">{stat.label}</p>
-              <p className="text-3xl font-black">{stat.value}</p>
+            <div key={stat.label} className={`${stat.bg} text-white rounded-2xl p-3 sm:p-5 hover:scale-[1.02] transition-transform cursor-default`}>
+              <div className="flex items-center justify-between mb-1 sm:mb-2">
+                <p className="text-white/70 text-[10px] sm:text-xs font-medium">{stat.label}</p>
+                <stat.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/50" />
+              </div>
+              <p className="text-xl sm:text-3xl font-black">{stat.value}</p>
             </div>
           ))}
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
           {filteredProducts.map((product, index) => (
             <motion.div
               key={product._id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
-              className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all"
+              whileHover={{ y: -4 }}
+              className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all"
             >
+              {/* Product Image */}
               <div className="aspect-square bg-gray-50 relative">
                 <img 
-                  src={product.images[0]} 
+                  src={product.images?.[0] || '/placeholder.png'} 
                   alt={product.name} 
                   className="w-full h-full object-cover" 
                 />
-                {product.images.length > 1 && (
-                  <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/60 rounded-full text-white text-xs">
+                {product.images?.length > 1 && (
+                  <div className="absolute bottom-2 right-2 px-1.5 sm:px-2 py-0.5 sm:py-1 bg-black/60 backdrop-blur-sm rounded-full text-white text-[10px] sm:text-xs font-medium">
                     +{product.images.length - 1}
                   </div>
                 )}
-                <div className={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold text-white ${product.inStock ? 'bg-green-500' : 'bg-red-500'}`}>
-                  {product.inStock ? 'In Stock' : 'Out of Stock'}
+                <div className={`absolute top-2 left-2 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold text-white shadow-lg ${product.inStock ? 'bg-green-500' : 'bg-red-500'}`}>
+                  {product.inStock ? 'Stock' : 'Out'}
                 </div>
               </div>
-              <div className="p-4">
-                <span className="text-xs font-bold text-gray-400 uppercase">{product.category}</span>
-                <h3 className="font-bold text-gray-900 mt-1">{product.name}</h3>
-                <p className="text-lg font-black text-gray-900 mt-2">Rs. {product.price.toLocaleString()}</p>
-                <div className="flex gap-2 mt-4">
+              
+              {/* Product Info */}
+              <div className="p-3 sm:p-4">
+                <span className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider">{product.category}</span>
+                <h3 className="font-bold text-gray-900 text-sm sm:text-base mt-0.5 sm:mt-1 truncate">{product.name}</h3>
+                <p className="text-sm sm:text-lg font-black text-gray-900 mt-1 sm:mt-2">Rs. {product.price?.toLocaleString()}</p>
+                
+                {/* Action Buttons */}
+                <div className="flex gap-1.5 sm:gap-2 mt-3 sm:mt-4">
                   <button
                     onClick={() => {
                       setEditingProduct(product);
                       setShowForm(true);
                     }}
-                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-all text-sm font-semibold"
+                    className="flex-1 flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 active:bg-gray-300 transition-all text-[11px] sm:text-sm font-semibold"
                   >
-                    <HiPencil className="w-4 h-4" /> Edit
+                    <HiPencil className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    <span className="hidden sm:inline">Edit</span>
                   </button>
                   <button
                     onClick={() => handleDelete(product._id)}
-                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-red-50 text-red-600 rounded-xl hover:bg-red-100 transition-all text-sm font-semibold"
+                    className="flex-1 flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 bg-red-50 text-red-600 rounded-xl hover:bg-red-100 active:bg-red-200 transition-all text-[11px] sm:text-sm font-semibold"
                   >
-                    <HiTrash className="w-4 h-4" /> Delete
+                    <HiTrash className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    <span className="hidden sm:inline">Delete</span>
                   </button>
                 </div>
               </div>
@@ -182,10 +208,14 @@ const AdminDashboard = ({ onLogout }) => {
           ))}
         </div>
 
+        {/* Empty State */}
         {filteredProducts.length === 0 && (
-          <div className="text-center py-20">
-            <HiSearch className="w-16 h-16 text-gray-200 mx-auto mb-4" />
-            <p className="text-gray-400 text-lg">No products found</p>
+          <div className="text-center py-16 sm:py-20">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-100 rounded-3xl flex items-center justify-center mx-auto mb-4">
+              <HiSearch className="w-8 h-8 sm:w-10 sm:h-10 text-gray-300" />
+            </div>
+            <p className="text-gray-400 text-sm sm:text-lg font-medium">No products found</p>
+            <p className="text-gray-300 text-xs sm:text-sm mt-1">Try a different search term</p>
           </div>
         )}
       </div>

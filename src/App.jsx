@@ -95,7 +95,7 @@ const MainWebsite = () => {
           {loading ? (
             <div className="text-center py-20"><div className="w-12 h-12 border-4 border-gray-900 border-t-transparent rounded-full animate-spin mx-auto mb-4" /><p className="text-gray-400">Loading...</p></div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
               {filteredProducts.map((p, i) => <ProductCard key={p._id} product={p} index={i} />)}
             </div>
           )}
