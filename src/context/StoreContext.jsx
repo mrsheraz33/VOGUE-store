@@ -19,7 +19,7 @@ export const StoreProvider = ({ children }) => {
 
   const orderViaWhatsApp = (product) => {
     const msg = `Hi, I want to order:%0A%0AProduct: ${product.name}%0ACategory: ${product.category}%0APrice: Rs. ${product.price.toLocaleString()}%0AColor: ${product.color}%0A%0APlease confirm availability.`;
-    window.open(`https://wa.me/923249620969?text=${msg}`, '_blank');
+    window.open(`https://wa.me/923000381569?text=${msg}`, '_blank');
   };
 
   return (
