@@ -34,7 +34,7 @@ const Footer = () => (
             <h3 className="text-lg font-bold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li>
-                <a href="https://wa.me/923249620969" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors text-sm group">
+                <a href='https://wa.me/923000381569' className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors text-sm group">
                   <div className="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/30 transition-all"><FaWhatsapp className="w-5 h-5 text-green-400" /></div>
                   <div><p className="text-xs text-gray-500">WhatsApp</p><p className="font-medium">+92 300 0381569</p></div>
                 </a>
