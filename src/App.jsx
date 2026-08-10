@@ -32,7 +32,7 @@ const SectionHeader = ({ label, title, subtitle, highlight }) => (
 // WhatsApp Float
 const WhatsAppFloat = () => (
   <motion.a
-    href="https://wa.me/923249620969?text=Hi,%20I%20want%20to%20order"
+    href="https://wa.me/923000381569?text=Hi,%20I%20want%20to%20order"
     target="_blank" rel="noopener noreferrer"
     initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.5, type: 'spring' }}
     whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }}
