@@ -77,7 +77,7 @@ const TermsOfService = () => {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="mt-12 bg-gray-900 text-white rounded-3xl p-8 text-center">
           <h3 className="text-xl font-black mb-3">Have Questions?</h3>
           <p className="text-gray-400 mb-4">Reach out to us for any clarifications about our terms.</p>
-          <a href="https://wa.me/923249620969" className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-all">
+          <a href='https://wa.me/923000381569'className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-all">
             WhatsApp Us
           </a>
         </motion.div>

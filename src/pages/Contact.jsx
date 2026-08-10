@@ -8,8 +8,8 @@ const Contact = () => {
     {
       icon: FaWhatsapp,
       title: 'WhatsApp',
-      value: '+92 324 9620969',
-      link: 'https://wa.me/923249620969',
+      value: '+92 300 0381569',
+      link: 'https://wa.me/923000381569',
       color: 'from-green-400 to-green-600',
       bg: 'bg-green-50',
       border: 'border-green-200',
@@ -18,8 +18,8 @@ const Contact = () => {
     {
       icon: HiMail,
       title: 'Email',
-      value: 'support@vogue.pk',
-      link: 'mailto:support@vogue.pk',
+      value: 'vouge127@gmail.com',
+      link: 'mailto:vouge127@gmail.com',
       color: 'from-blue-400 to-blue-600',
       bg: 'bg-blue-50',
       border: 'border-blue-200',
@@ -28,7 +28,7 @@ const Contact = () => {
     {
       icon: HiLocationMarker,
       title: 'Location',
-      value: 'Karachi, Pakistan',
+      value: 'Shop No 06 Model Bazar Jhang Road Faisalabad',
       link: '#',
       color: 'from-purple-400 to-purple-600',
       bg: 'bg-purple-50',
@@ -38,7 +38,7 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: FaWhatsapp, url: 'https://wa.me/923249620969', color: 'bg-green-500', hover: 'hover:bg-green-600' },
+    { icon: FaWhatsapp, url: 'https://wa.me/923000381569', color: 'bg-green-500', hover: 'hover:bg-green-600' },
     { icon: FaFacebook, url: '#', color: 'bg-blue-600', hover: 'hover:bg-blue-700' },
     { icon: FaInstagram, url: '#', color: 'bg-gradient-to-br from-purple-500 to-pink-500', hover: 'hover:from-purple-600 hover:to-pink-600' },
     { icon: FaTiktok, url: '#', color: 'bg-gray-900', hover: 'hover:bg-black' },

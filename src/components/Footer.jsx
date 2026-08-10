@@ -36,19 +36,19 @@ const Footer = () => (
               <li>
                 <a href="https://wa.me/923249620969" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors text-sm group">
                   <div className="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/30 transition-all"><FaWhatsapp className="w-5 h-5 text-green-400" /></div>
-                  <div><p className="text-xs text-gray-500">WhatsApp</p><p className="font-medium">+92 324 9620969</p></div>
+                  <div><p className="text-xs text-gray-500">WhatsApp</p><p className="font-medium">+92 300 0381569</p></div>
                 </a>
               </li>
               <li>
                 <div className="flex items-center gap-3 text-gray-400 text-sm">
                   <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0"><HiMail className="w-5 h-5 text-gray-500" /></div>
-                  <div><p className="text-xs text-gray-500">Email</p><p className="font-medium">support@vogue.pk</p></div>
+                  <div><p className="text-xs text-gray-500">Email</p><p className="font-medium">vouge127@gmail.com</p></div>
                 </div>
               </li>
               <li>
                 <div className="flex items-center gap-3 text-gray-400 text-sm">
                   <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0"><HiLocationMarker className="w-5 h-5 text-gray-500" /></div>
-                  <div><p className="text-xs text-gray-500">Location</p><p className="font-medium">Shop no 06 Model Bazar jhang road Faisalabad</p></div>
+                  <div><p className="text-xs text-gray-500">Location</p><p className="font-medium">Shop No 06 Model Bazar Jhang Road Faisalabad</p></div>
                 </div>
               </li>
             </ul>
