@@ -41,7 +41,7 @@ const Contact = () => {
     { icon: FaWhatsapp, url: 'https://wa.me/923000381569', color: 'bg-green-500', hover: 'hover:bg-green-600' },
     { icon: FaFacebook, url: '#', color: 'bg-blue-600', hover: 'hover:bg-blue-700' },
     { icon: FaInstagram, url: '#', color: 'bg-gradient-to-br from-purple-500 to-pink-500', hover: 'hover:from-purple-600 hover:to-pink-600' },
-    { icon: FaTiktok, url: '#', color: 'bg-gray-900', hover: 'hover:bg-black' },
+    { icon: FaTiktok, url: 'https://www.tiktok.com/@vouge.store7?_r=1&_t=ZS-98m2ZRGyzJ7', color: 'bg-gray-900', hover: 'hover:bg-black' },
   ];
 
   return (

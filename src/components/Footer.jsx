@@ -17,7 +17,7 @@ const Footer = () => (
             <div className="flex gap-3">
               <a href="#" className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-gray-400 hover:bg-blue-500 hover:text-white transition-all"><FaFacebook className="w-5 h-5" /></a>
               <a href="#" className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-gray-400 hover:bg-pink-500 hover:text-white transition-all"><FaInstagram className="w-5 h-5" /></a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-gray-400 hover:bg-white hover:text-gray-900 transition-all"><FaTiktok className="w-5 h-5" /></a>
+              <a href="https://www.tiktok.com/@vouge.store7?_r=1&_t=ZS-98m2ZRGyzJ7" className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-gray-400 hover:bg-white hover:text-gray-900 transition-all"><FaTiktok className="w-5 h-5" /></a>
             </div>
           </div>
           <div>
