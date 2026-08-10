@@ -48,7 +48,7 @@ const Footer = () => (
               <li>
                 <div className="flex items-center gap-3 text-gray-400 text-sm">
                   <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0"><HiLocationMarker className="w-5 h-5 text-gray-500" /></div>
-                  <div><p className="text-xs text-gray-500">Location</p><p className="font-medium">Karachi, Pakistan</p></div>
+                  <div><p className="text-xs text-gray-500">Location</p><p className="font-medium">Shop no 06 Model Bazar jhang road Faisalabad</p></div>
                 </div>
               </li>
             </ul>
