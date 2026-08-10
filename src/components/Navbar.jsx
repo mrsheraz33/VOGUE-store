@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="/" className="lg:mx-0 mx-auto flex items-center gap-3">
-            <img src="/logo.png" alt="VOGUE" className="h-45 w-auto object-contain" />
+            <img src="/logo.png" alt="VOGUE" className="h-43 w-auto object-contain" />
           </a>
 
 
