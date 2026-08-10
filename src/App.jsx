@@ -545,11 +545,12 @@ const MainWebsite = () => {
     fetchProducts();
   }, []);
 
-  const fetchProducts = async () => {
 
-    const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = 'https://vogue-backend-ibwc.onrender.com';
+  const fetchProducts = async () => {
+    
     try {
-      const response = await fetch(`${API_URL}/api/products`);
+      const response = await fetch (`${ API_URL}/api/products`);
       const data = await response.json();
       setProducts(data);
     } catch (error) {

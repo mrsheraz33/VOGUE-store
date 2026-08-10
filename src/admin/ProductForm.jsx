@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiX, HiPhotograph, HiPlus, HiTrash } from 'react-icons/hi';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = 'https://vogue-backend-ibwc.onrender.com';
 
 const ProductForm = ({ product, onClose, onSave }) => {
   const [formData, setFormData] = useState({
