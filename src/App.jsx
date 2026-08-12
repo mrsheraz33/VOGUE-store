@@ -64,9 +64,32 @@ const MainWebsite = () => {
 
   useEffect(() => { fetchProducts(); }, []);
 
-  const filteredProducts = useMemo(() => {
+const filteredProducts = useMemo(() => {
     if (!search.trim()) return products;
-    return products.filter(p => p.name.toLowerCase().includes(search.toLowerCase()));
+    const searchTerm = search.toLowerCase().trim();
+    
+    return products.filter(p => {
+      if (p.name.toLowerCase().includes(searchTerm)) return true;
+      if (p.category.toLowerCase().includes(searchTerm)) return true;
+      if (p.price?.toString().includes(searchTerm)) return true;
+      
+      if (searchTerm.includes('-')) {
+        const [min, max] = searchTerm.split('-').map(Number);
+        if (!isNaN(min) && !isNaN(max) && p.price >= min && p.price <= max) return true;
+      }
+      
+      if (searchTerm.startsWith('under ') || searchTerm.startsWith('below ')) {
+        const price = Number(searchTerm.replace(/^(under|below)\s+/, ''));
+        if (!isNaN(price) && p.price <= price) return true;
+      }
+      
+      if (searchTerm.startsWith('above ') || searchTerm.startsWith('over ')) {
+        const price = Number(searchTerm.replace(/^(above|over)\s+/, ''));
+        if (!isNaN(price) && p.price >= price) return true;
+      }
+      
+      return false;
+    });
   }, [search, products]);
 
   return (
@@ -89,7 +112,7 @@ const MainWebsite = () => {
           <div className="max-w-xl mx-auto mb-12">
             <div className="relative">
               <HiSearch className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <input type="text" placeholder="Search by product name..." value={search} onChange={e => setSearch(e.target.value)} className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-gray-900 transition-all" />
+              <input type="text" placeholder="Search name, category, price..." value={search} onChange={e => setSearch(e.target.value)} className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-gray-900 transition-all" />
             </div>
           </div>
           {loading ? (
