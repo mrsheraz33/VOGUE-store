@@ -113,7 +113,7 @@ const ShippingPolicy = () => {
       </div>
 
       <div className="border-t border-gray-100 bg-white py-6 text-center">
-        <p className="text-gray-400 text-sm">© 2026 VOGUE. All rights reserved.</p>
+        <p className="text-gray-400 text-sm">© 2026 VOUGE. All rights reserved.</p>
       </div>
     </div>
   );

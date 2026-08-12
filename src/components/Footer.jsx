@@ -9,7 +9,7 @@ const Footer = () => (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           <div>
             <a href="/" className="inline-flex items-center gap-3 mb-6">
-              <img src="/logo.png" alt="VOGUE" className="h-25 w-auto object-contain brightness-0 invert" />
+              <img src="/logo.png" alt="VOUGE" className="h-25 w-auto object-contain brightness-0 invert" />
             </a>
             <p className="text-gray-400 mb-8 leading-relaxed">
               Premium sneakers for the modern Pakistani. Trendy designs, affordable prices, Cash on Delivery available.
@@ -57,7 +57,7 @@ const Footer = () => (
     </div>
     <div className="border-t border-white/10">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p className="text-gray-500 text-sm">© 2026 VOGUE. All rights reserved.</p>
+        <p className="text-gray-500 text-sm">© 2026 VOUGE. All rights reserved.</p>
         <div className="flex gap-6 text-sm text-gray-500">
           <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
           <a href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</a>

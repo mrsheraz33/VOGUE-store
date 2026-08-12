@@ -25,7 +25,7 @@ const TermsOfService = () => {
     {
       icon: HiExclamation,
       title: 'Limitation of Liability',
-      content: 'VOGUE is not liable for delays caused by courier services or circumstances beyond our control. Product colors may slightly vary from images.',
+      content: 'VOUGE is not liable for delays caused by courier services or circumstances beyond our control. Product colors may slightly vary from images.',
       color: 'from-red-400 to-red-600'
     },
   ];
@@ -84,7 +84,7 @@ const TermsOfService = () => {
       </div>
 
       <div className="border-t border-gray-100 bg-white py-6 text-center">
-        <p className="text-gray-400 text-sm">© 2026 VOGUE. All rights reserved.</p>
+        <p className="text-gray-400 text-sm">© 2026 VOUGE. All rights reserved.</p>
       </div>
     </div>
   );
