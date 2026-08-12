@@ -29,6 +29,10 @@ const AdminDashboard = ({ onLogout }) => {
     fetchProducts();
   }, []);
 
+
+
+  
+
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this product?')) return;
 
@@ -59,9 +63,40 @@ const AdminDashboard = ({ onLogout }) => {
     setEditingProduct(null);
   };
 
-  const filteredProducts = products.filter(p => 
-    p.name.toLowerCase().includes(search.toLowerCase())
-  );
+ const filteredProducts = products.filter(p => {
+    const searchTerm = search.toLowerCase().trim();
+    
+    if (!searchTerm) return true;
+    
+    // Name search
+    if (p.name.toLowerCase().includes(searchTerm)) return true;
+    
+    // Category search
+    if (p.category.toLowerCase().includes(searchTerm)) return true;
+    
+    // Price exact search
+    if (p.price?.toString().includes(searchTerm)) return true;
+    
+    // Price range: "3000-5000"
+    if (searchTerm.includes('-')) {
+      const [min, max] = searchTerm.split('-').map(Number);
+      if (!isNaN(min) && !isNaN(max) && p.price >= min && p.price <= max) return true;
+    }
+    
+    // Under/Below: "under 3000" or "below 3000"
+    if (searchTerm.startsWith('under ') || searchTerm.startsWith('below ')) {
+      const price = Number(searchTerm.replace(/^(under|below)\s+/, ''));
+      if (!isNaN(price) && p.price <= price) return true;
+    }
+    
+    // Above/Over: "above 4000" or "over 4000"
+    if (searchTerm.startsWith('above ') || searchTerm.startsWith('over ')) {
+      const price = Number(searchTerm.replace(/^(above|over)\s+/, ''));
+      if (!isNaN(price) && p.price >= price) return true;
+    }
+    
+    return false;
+  });
 
   if (loading) {
     return (
