@@ -42,7 +42,7 @@ const Footer = () => (
               <li>
                 <div className="flex items-center gap-3 text-gray-400 text-sm">
                   <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0"><HiMail className="w-5 h-5 text-gray-500" /></div>
-                  <div><p className="text-xs text-gray-500">Email</p><p className="font-medium">vouge127@gmail.com</p></div>
+                  <div><p className="text-xs text-gray-500">Email</p><p className="font-medium">support@vougee.store</p></div>
                 </div>
               </li>
               <li>

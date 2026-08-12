@@ -6,7 +6,7 @@ const WhyChooseUs = () => (
   <section id="why-us" className="py-16 lg:py-24 bg-gray-50">
     <div className="max-w-7xl mx-auto px-5 sm:px-8">
       <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-black text-gray-900">Why Choose VOGUE?</h2>
+        <h2 className="text-3xl sm:text-4xl font-black text-gray-900">Why Choose VOUGE?</h2>
         <div className="w-20 h-1 bg-gray-900 mx-auto mt-4 rounded-full" />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">

@@ -18,8 +18,8 @@ const Contact = () => {
     {
       icon: HiMail,
       title: 'Email',
-      value: 'vouge127@gmail.com',
-      link: 'mailto:vouge127@gmail.com',
+      value: 'support@vougee.store',
+      link: 'mailto:support@vougee.store',
       color: 'from-blue-400 to-blue-600',
       bg: 'bg-blue-50',
       border: 'border-blue-200',

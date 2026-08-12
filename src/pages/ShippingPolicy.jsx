@@ -105,7 +105,7 @@ const ShippingPolicy = () => {
             <a href='https://wa.me/923000381569' className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-all">
               WhatsApp Support
             </a>
-            <a href="mailto:vouge127@gmail.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-all">
+            <a href="mailto:support@vougee.store" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-all">
               Email Us
             </a>
           </div>
