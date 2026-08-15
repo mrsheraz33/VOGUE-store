@@ -35,7 +35,7 @@ const TickerBar = () => {
           100% { transform: translateX(-33.333%); }
         }
         .animate-marquee {
-          animation: marquee 15s linear infinite;
+          animation: marquee 7s linear infinite;
         }
         .animate-marquee:hover {
           animation-play-state: paused;
