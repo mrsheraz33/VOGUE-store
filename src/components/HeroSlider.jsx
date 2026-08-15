@@ -33,7 +33,7 @@ const HeroSlider = () => {
       <div className="relative z-20 max-w-5xl mx-auto px-5 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 border border-white/20 rounded-full mb-6 backdrop-blur-sm">
           <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-          <span className="text-sm font-bold text-white tracking-widest uppercase">New Collection 2025</span>
+          <span className="text-sm font-bold text-white tracking-widest uppercase">New Collection 2026</span>
         </motion.div>
 
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="text-5xl sm:text-6xl md:text-7xl font-black leading-none mb-6 text-white">

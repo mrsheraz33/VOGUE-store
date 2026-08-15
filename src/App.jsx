@@ -16,6 +16,10 @@ import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import ShippingPolicy from './pages/ShippingPolicy';
+import TickerBar from './components/TickerBar';
+import FeaturedProducts from './components/FeaturedProducts';
+import CategoriesShowcase from './components/CategoriesShowcase';
+import FAQ from './components/FAQ';
 
 const API_URL = 'https://vogue-backend-ibwc.onrender.com';
 
@@ -106,6 +110,7 @@ const filteredProducts = useMemo(() => {
       `}</style>
       <Navbar />
       <HeroSlider />
+       <TickerBar />
       <section id="shop" className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <SectionHeader label="Our Collection" title="Trending" highlight="Sneakers" subtitle="Find your perfect pair" />
@@ -128,6 +133,10 @@ const filteredProducts = useMemo(() => {
         </div>
       </section>
       <WhyChooseUs />
+      <FeaturedProducts />      {/* ✅ Best Sellers */}
+<CategoriesShowcase />    {/* ✅ Categories */}
+
+<FAQ /> 
       <Footer />
       <WhatsAppFloat />
       <ProductModal />

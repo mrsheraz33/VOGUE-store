@@ -42,8 +42,27 @@ const ProductCard = ({ product, index }) => {
           {product.name}
         </h3>
         
+        {/* Sizes - Left side */}
+        <div className="flex items-center gap-1 mt-2 sm:mt-2 mb-1">
+          <div className="flex items-center gap-1">
+            {product.sizes?.slice(0, 3).map((size, i) => (
+              <span 
+                key={i} 
+                className="px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[10px] font-medium bg-gray-100 text-gray-600 rounded-md"
+              >
+                {size}
+              </span>
+            ))}
+            {product.sizes?.length > 3 && (
+              <span className="text-[9px] sm:text-[10px] font-medium text-gray-400">
+                +{product.sizes.length - 3}
+              </span>
+            )}
+          </div>
+        </div>
+        
         {/* Price & Order Button */}
-        <div className="flex items-center justify-between mt-2 sm:mt-4">
+        <div className="flex items-center justify-between mt-2 sm:mt-3">
           {/* Price */}
           <span className="text-sm sm:text-xl font-black text-gray-900">Rs. {product.price.toLocaleString()}</span>
           
